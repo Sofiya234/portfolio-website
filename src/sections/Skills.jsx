@@ -1,44 +1,74 @@
 const skillCategories = [
   {
-    title: "Frontend",
-    skills: ["React", "Tailwind CSS", "JavaScript", "HTML", "CSS"],
+    title: "Frontend Development",
+    icon: "💻",
+    skills: [
+      "React.js",
+      "JavaScript",
+      "Tailwind CSS",
+      "HTML5",
+      "CSS3",
+      "Responsive Design",
+    ],
   },
 
   {
     title: "Mobile Development",
-    skills: ["Flutter", "Java", "Firebase"],
+    icon: "📱",
+    skills: [
+      "Flutter",
+      "Java",
+      "Firebase",
+      "Android Studio",
+      "XML",
+    ],
   },
 
   {
     title: "Backend & Database",
-    skills: ["SQL", "Node.js", "MongoDB"],
+    icon: "⚙️",
+    skills: [
+      "Node.js",
+      "MongoDB",
+      "SQL",
+      "REST APIs",
+    ],
   },
 
   {
-    title: "Tools",
-    skills: ["Git", "GitHub", "VS Code", "Figma"],
+    title: "Tools & Design",
+    icon: "🎨",
+    skills: [
+      "Git",
+      "GitHub",
+      "VS Code",
+      "Figma",
+      "UI/UX",
+    ],
   },
 ];
 
 function Skills() {
   return (
     <section
-  id="skills"
-  className="bg-[#1E1B2E] py-32 px-6"
->
-
-      <div className="max-w-6xl mx-auto">
+      id="skills"
+      className="bg-[#1E1B2E] py-32 px-6"
+    >
+      <div className="max-w-7xl mx-auto">
 
         {/* Heading */}
-        <div className="mb-20">
+        <div className="text-center mb-24">
 
           <h2 className="text-5xl md:text-6xl font-bold text-pink-100">
             Skills & Expertise
           </h2>
 
-          <p className="text-gray-400 mt-6 max-w-2xl text-lg leading-relaxed">
-            Technologies and tools I use to design,
-            develop, and create modern digital experiences.
+          <div className="w-28 h-1 bg-pink-300 mx-auto mt-5 rounded-full"></div>
+
+          <p className="text-gray-400 mt-8 max-w-3xl mx-auto text-lg leading-relaxed">
+            A combination of development, creativity, and modern technologies
+            that help me build responsive, interactive, and visually engaging
+            digital experiences.
           </p>
 
         </div>
@@ -50,13 +80,21 @@ function Skills() {
 
             <div
               key={index}
-              className="bg-[#241D33] border border-pink-300/10 rounded-3xl p-8 hover:border-pink-300/30 transition duration-300"
+              className="group bg-[#241D33] border border-pink-300/10 rounded-[32px] p-8 hover:border-pink-300/30 hover:-translate-y-2 transition duration-300 shadow-xl"
             >
 
-              {/* Category Title */}
-              <h3 className="text-2xl font-semibold text-pink-200 mb-8">
-                {category.title}
-              </h3>
+              {/* Top */}
+              <div className="flex items-center gap-4 mb-8">
+
+                <div className="text-4xl">
+                  {category.icon}
+                </div>
+
+                <h3 className="text-2xl md:text-3xl font-semibold text-pink-200">
+                  {category.title}
+                </h3>
+
+              </div>
 
               {/* Skills */}
               <div className="flex flex-wrap gap-4">
@@ -65,7 +103,7 @@ function Skills() {
 
                   <div
                     key={i}
-                    className="px-5 py-2 rounded-full bg-[#2E2640] text-gray-200 hover:bg-pink-300 hover:text-black transition duration-300"
+                    className="px-5 py-3 rounded-2xl bg-[#2E2640] border border-pink-300/10 text-gray-200 hover:bg-pink-300 hover:text-black hover:scale-105 transition duration-300 cursor-default shadow-md"
                   >
                     {skill}
                   </div>
@@ -81,7 +119,6 @@ function Skills() {
         </div>
 
       </div>
-
     </section>
   );
 }

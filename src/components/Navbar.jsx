@@ -1,44 +1,41 @@
 function Navbar() {
+  const navLinks = [
+    "About",
+    "Education",
+    "Skills",
+    "Experience",
+    "Achievements",
+  ];
+
   return (
-    <nav className="fixed top-0 left-0 w-full border-b border-gray-800 bg-[#1E1B2E]/80 backdrop-blur-md z-50">
+    <header className="fixed top-0 left-0 w-full z-50 px-6 py-5">
 
-      <div className="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto">
 
-        <h1 className="text-2xl font-bold text-white">
-          Sofiya
-        </h1>
+        <div className="bg-[#241D33]/80 backdrop-blur-xl border border-pink-300/10 rounded-full px-8 py-4 shadow-2xl flex items-center justify-center">
 
-        <ul className="hidden md:flex gap-8 text-gray-300">
+          {/* Navigation */}
+          <nav className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
 
-          <li>
-            <a href="#home" className="hover:text-pink-300 transition">
-              Home
-            </a>
-          </li>
+            {navLinks.map((link, index) => (
 
-          <li>
-            <a href="#about" className="hover:text-pink-300 transition">
-              About
-            </a>
-          </li>
+              <a
+                key={index}
+                href={`#${link.toLowerCase().replace(/\s+/g, "")}`}
+                className="px-5 py-2 rounded-full text-gray-300 hover:text-black hover:bg-pink-300 transition duration-300 text-sm md:text-base font-medium"
+              >
+                {link}
+              </a>
 
-          <li>
-            <a href="#skills" className="hover:text-pink-300 transition">
-              Skills
-            </a>
-          </li>
+            ))}
 
-          <li>
-            <a href="#education" className="hover:text-pink-300 transition">
-              Education
-            </a>
-          </li>
+          </nav>
 
-        </ul>
+        </div>
 
       </div>
 
-    </nav>
+    </header>
   );
 }
 
